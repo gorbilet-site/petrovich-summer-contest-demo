@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Где лето лучше: в городе или на даче?</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Петрович и Горбилет">
+        <span>Петрович</span>
+        <span class="brand-mark">×</span>
+        <span>Горбилет</span>
+      </a>
+      <nav class="main-nav" aria-label="Навигация">
+        <a href="#feed">Лента</a>
+        <a href="#prizes">Призы</a>
+        <a href="#join">Участвовать</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="hero-split" aria-hidden="true">
+          <div class="hero-photo hero-city">
+            <span class="side-label">Город</span>
+          </div>
+          <div class="hero-photo hero-dacha">
+            <span class="side-label">Дача</span>
+          </div>
+        </div>
+
+        <div class="hero-content">
+          <div class="hero-copy">
+            <p class="eyebrow">Летний фотоконкурс</p>
+            <h1 id="hero-title">Где лето лучше: в городе или на даче?</h1>
+            <p class="hero-lead">
+              Загружайте одно фото своего лета, выбирайте сторону и помогайте
+              команде обогнать соперников.
+            </p>
+            <div class="hero-actions" aria-label="Быстрый выбор стороны">
+              <button class="quick-side active" type="button" data-side="city">
+                Я за город
+              </button>
+              <button class="quick-side" type="button" data-side="dacha">
+                Я за дачу
+              </button>
+            </div>
+          </div>
+
+          <form class="entry-panel" id="join" aria-label="Заявка на участие">
+            <div class="panel-heading">
+              <p class="panel-kicker">Заявка</p>
+              <h2>Отправьте свое лето</h2>
+            </div>
+
+            <div class="side-switch" role="group" aria-label="Выберите сторону">
+              <button class="side-option active" type="button" data-side="city">
+                Город
+              </button>
+              <button class="side-option" type="button" data-side="dacha">
+                Дача
+              </button>
+            </div>
+
+            <label class="upload-box" for="photoInput">
+              <input id="photoInput" name="photo" type="file" accept="image/*" />
+              <span class="upload-icon" aria-hidden="true">+</span>
+              <span class="upload-title">Загрузить фото</span>
+              <span class="upload-note">JPG или PNG, одно изображение</span>
+            </label>
+
+            <div class="preview-wrap" id="previewWrap" hidden>
+              <img id="photoPreview" alt="Предпросмотр выбранного фото" />
+              <button class="text-button" id="removePhoto" type="button">
+                Заменить фото
+              </button>
+            </div>
+
+            <div class="form-grid">
+              <label>
+                <span>Имя</span>
+                <input id="nameInput" name="name" type="text" autocomplete="name" />
+              </label>
+              <label>
+                <span>Контакт</span>
+                <input
+                  id="contactInput"
+                  name="contact"
+                  type="text"
+                  autocomplete="email"
+                  placeholder="@username или email"
+                />
+              </label>
+            </div>
+
+            <div class="max-block" aria-labelledby="max-title">
+              <h3 id="max-title">Участие через MAX-ботов</h3>
+              <p class="bot-note">
+                Откройте оба бота, нажмите кнопку «Участвую» в каждом и вернитесь
+                на сайт.
+              </p>
+              <div class="max-links">
+                <a
+                  href="https://max.ru/id010511198702_bot"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Бот Петровича
+                </a>
+                <a
+                  href="https://max.ru/id772377734108_bot"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Бот Горбилета
+                </a>
+              </div>
+              <label class="checkbox-row">
+                <input id="maxPetrovich" type="checkbox" />
+                <span>Нажал(а) «Участвую» в боте Петровича</span>
+              </label>
+              <label class="checkbox-row">
+                <input id="maxGorbilet" type="checkbox" />
+                <span>Нажал(а) «Участвую» в боте Горбилета</span>
+              </label>
+            </div>
+
+            <label class="checkbox-row consent">
+              <input id="consentInput" type="checkbox" />
+              <span>Разрешаю использовать фото в ленте конкурса</span>
+            </label>
+
+            <button class="submit-button" type="submit">Отправить заявку</button>
+            <p class="form-message" id="formMessage" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+
+        <div class="scoreboard" aria-label="Счетчик участников">
+          <div class="score-item">
+            <span class="score-name">Город</span>
+            <strong id="cityCount">0</strong>
+          </div>
+          <div class="score-track" aria-hidden="true">
+            <span id="cityBar"></span>
+            <span id="dachaBar"></span>
+          </div>
+          <div class="score-item align-right">
+            <span class="score-name">Дача</span>
+            <strong id="dachaCount">0</strong>
+          </div>
+          <p class="leader" id="leaderText">Считаем участников</p>
+        </div>
+      </section>
+
+      <section class="section feed-section" id="feed" aria-labelledby="feed-title">
+        <div class="section-head">
+          <p class="eyebrow dark">Лента лета</p>
+          <h2 id="feed-title">Как участники проводят июль</h2>
+          <div class="filter-tabs" role="group" aria-label="Фильтр ленты">
+            <button class="filter-tab active" type="button" data-filter="all">
+              Все
+            </button>
+            <button class="filter-tab" type="button" data-filter="city">
+              Город
+            </button>
+            <button class="filter-tab" type="button" data-filter="dacha">
+              Дача
+            </button>
+          </div>
+        </div>
+        <div class="photo-grid" id="photoGrid" aria-live="polite"></div>
+      </section>
+
+      <section class="section rules-section" aria-labelledby="rules-title">
+        <div class="section-head compact">
+          <p class="eyebrow dark">Механика</p>
+          <h2 id="rules-title">Три шага до участия</h2>
+        </div>
+        <div class="steps">
+          <article>
+            <span>1</span>
+            <h3>Выберите сторону</h3>
+            <p>Городское лето с афишами и террасами или дачное с грядками и верандой.</p>
+          </article>
+          <article>
+            <span>2</span>
+            <h3>Загрузите фото</h3>
+            <p>Одно живое фото, на котором понятно, где проходит ваше лето.</p>
+          </article>
+          <article>
+            <span>3</span>
+            <h3>Нажмите «Участвую» в MAX</h3>
+            <p>Два бота конкурса: Петрович и Горбилет. В демо подтверждение отмечается вручную.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section prizes-section" id="prizes" aria-labelledby="prizes-title">
+        <div class="section-head">
+          <p class="eyebrow dark">Призы</p>
+          <h2 id="prizes-title">У каждой команды свой летний куш</h2>
+        </div>
+        <div class="prize-layout">
+          <article class="prize-card city-card">
+            <p class="prize-count">10 победителей</p>
+            <h3>Городские</h3>
+            <p>Сертификаты от Горбилета для концертов, выставок, театров и прогулок.</p>
+          </article>
+          <article class="prize-card bonus-card">
+            <p class="prize-count">+1 бонус</p>
+            <h3>Команда-лидер</h3>
+            <p id="bonusPrize">
+              Если впереди дачники, разыгрываем дачный приз. Если городские,
+              добавляем культурный.
+            </p>
+          </article>
+          <article class="prize-card dacha-card">
+            <p class="prize-count">10 победителей</p>
+            <h3>Дачники</h3>
+            <p>Сертификаты от Петровича для ремонта, сада, теплицы и летней кухни.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="promo-section" aria-labelledby="promo-title">
+        <div>
+          <p class="eyebrow dark">Финальный подарок</p>
+          <h2 id="promo-title">КУЛЬТУРНЫЙ ДАЧНИК</h2>
+          <p>
+            После конкурса все участники получают промокод, который работает у
+            Петровича и в Горбилете.
+          </p>
+        </div>
+        <a class="promo-cta" href="#join">Выбрать сторону</a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Петрович × Горбилет</span>
+      <span>Конкурс на месяц: старт, сбор фото, модерация, финальный розыгрыш.</span>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
