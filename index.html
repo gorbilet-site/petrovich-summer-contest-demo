@@ -8,238 +8,293 @@
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="#top" aria-label="Петрович и Горбилет">
+      <a class="brand-lockup" href="#top" aria-label="Петрович и Горбилет">
         <span>Петрович</span>
-        <span class="brand-mark">×</span>
+        <span class="brand-cross">×</span>
         <span>Горбилет</span>
       </a>
       <nav class="main-nav" aria-label="Навигация">
-        <a href="#feed">Лента</a>
-        <a href="#prizes">Призы</a>
+        <a href="#board">Доска</a>
         <a href="#join">Участвовать</a>
+        <a href="#prizes">Призы</a>
       </nav>
     </header>
 
     <main>
       <section class="hero" id="top" aria-labelledby="hero-title">
-        <div class="hero-split" aria-hidden="true">
-          <div class="hero-photo hero-city">
-            <span class="side-label">Город</span>
+        <div class="poster-frame">
+          <div class="poster-brand">
+            <span class="poster-mark" aria-hidden="true"></span>
+            <span>Фото-конкурс в MAX</span>
           </div>
-          <div class="hero-photo hero-dacha">
-            <span class="side-label">Дача</span>
-          </div>
-        </div>
 
-        <div class="hero-content">
-          <div class="hero-copy">
-            <p class="eyebrow">Летний фотоконкурс</p>
-            <h1 id="hero-title">Где лето лучше: в городе или на даче?</h1>
+          <div class="poster-card">
+            <p class="eyebrow">Петрович × Горбилет</p>
+            <h1 id="hero-title">
+              <span>Где лето</span>
+              <span>лучше:</span>
+              <span>в&nbsp;городе</span>
+              <span>или</span>
+              <span>на&nbsp;даче?</span>
+            </h1>
             <p class="hero-lead">
-              Загружайте одно фото своего лета, выбирайте сторону и помогайте
-              команде обогнать соперников.
+              Загрузите одно фото, выберите сторону и&nbsp;попадите
+              на&nbsp;общую доску летнего соперничества.
             </p>
-            <div class="hero-actions" aria-label="Быстрый выбор стороны">
-              <button class="quick-side active" type="button" data-side="city">
-                Я за город
-              </button>
-              <button class="quick-side" type="button" data-side="dacha">
-                Я за дачу
-              </button>
+            <div class="poster-tags" aria-label="Условия конкурса">
+              <span>.одно фото</span>
+              <span>.два MAX-бота</span>
+              <span>.20 победителей</span>
+              <span>.промокод всем</span>
             </div>
           </div>
 
-          <form class="entry-panel" id="join" aria-label="Заявка на участие">
-            <div class="panel-heading">
-              <p class="panel-kicker">Заявка</p>
-              <h2>Отправьте свое лето</h2>
-            </div>
+          <div class="poster-actions">
+            <a class="primary-link" href="#join">Добавить фото</a>
+            <a class="secondary-link" href="#board">Смотреть доску</a>
+          </div>
+          <span class="poster-year">2026</span>
+        </div>
+      </section>
 
-            <div class="side-switch" role="group" aria-label="Выберите сторону">
-              <button class="side-option active" type="button" data-side="city">
-                Город
-              </button>
-              <button class="side-option" type="button" data-side="dacha">
-                Дача
-              </button>
-            </div>
-
-            <label class="upload-box" for="photoInput">
-              <input id="photoInput" name="photo" type="file" accept="image/*" />
-              <span class="upload-icon" aria-hidden="true">+</span>
-              <span class="upload-title">Загрузить фото</span>
-              <span class="upload-note">JPG или PNG, одно изображение</span>
-            </label>
-
-            <div class="preview-wrap" id="previewWrap" hidden>
-              <img id="photoPreview" alt="Предпросмотр выбранного фото" />
-              <button class="text-button" id="removePhoto" type="button">
-                Заменить фото
-              </button>
-            </div>
-
-            <div class="form-grid">
-              <label>
-                <span>Имя</span>
-                <input id="nameInput" name="name" type="text" autocomplete="name" />
-              </label>
-              <label>
-                <span>Контакт</span>
-                <input
-                  id="contactInput"
-                  name="contact"
-                  type="text"
-                  autocomplete="email"
-                  placeholder="@username или email"
-                />
-              </label>
-            </div>
-
-            <div class="max-block" aria-labelledby="max-title">
-              <h3 id="max-title">Участие через MAX-ботов</h3>
-              <p class="bot-note">
-                Откройте оба бота, нажмите кнопку «Участвую» в каждом и вернитесь
-                на сайт.
-              </p>
-              <div class="max-links">
-                <a
-                  href="https://max.ru/id010511198702_bot"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Бот Петровича
-                </a>
-                <a
-                  href="https://max.ru/id772377734108_bot"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Бот Горбилета
-                </a>
-              </div>
-              <label class="checkbox-row">
-                <input id="maxPetrovich" type="checkbox" />
-                <span>Нажал(а) «Участвую» в боте Петровича</span>
-              </label>
-              <label class="checkbox-row">
-                <input id="maxGorbilet" type="checkbox" />
-                <span>Нажал(а) «Участвую» в боте Горбилета</span>
-              </label>
-            </div>
-
-            <label class="checkbox-row consent">
-              <input id="consentInput" type="checkbox" />
-              <span>Разрешаю использовать фото в ленте конкурса</span>
-            </label>
-
-            <button class="submit-button" type="submit">Отправить заявку</button>
-            <p class="form-message" id="formMessage" role="status" aria-live="polite"></p>
-          </form>
+      <section class="board-section" id="board" aria-labelledby="board-title">
+        <div class="section-copy board-copy">
+          <p class="eyebrow">Доска участников</p>
+          <h2 id="board-title">
+            <span>Город</span>
+            <span>против дачи</span>
+          </h2>
+          <p>
+            Фотографии крепятся на&nbsp;общую доску. Можно двигать поле,
+            увеличивать масштаб и&nbsp;смотреть карточки ближе.
+          </p>
         </div>
 
-        <div class="scoreboard" aria-label="Счетчик участников">
-          <div class="score-item">
-            <span class="score-name">Город</span>
-            <strong id="cityCount">0</strong>
+        <section class="board-panel" aria-label="Интерактивная доска участников">
+          <div class="board-topline">
+            <div class="score-compact" aria-label="Счет участников">
+              <span><b id="cityCount">0</b> город</span>
+              <span><b id="dachaCount">0</b> дача</span>
+            </div>
+            <div class="board-toolbar">
+              <div class="filter-tabs" role="group" aria-label="Фильтр доски">
+                <button class="filter-tab active" type="button" data-filter="all">
+                  Все
+                </button>
+                <button class="filter-tab" type="button" data-filter="city">
+                  Город
+                </button>
+                <button class="filter-tab" type="button" data-filter="dacha">
+                  Дача
+                </button>
+              </div>
+              <div class="zoom-tools" aria-label="Масштаб доски">
+                <button class="icon-button" id="zoomOut" type="button" aria-label="Уменьшить">
+                  −
+                </button>
+                <span id="zoomValue">100%</span>
+                <button class="icon-button" id="zoomIn" type="button" aria-label="Увеличить">
+                  +
+                </button>
+                <button class="reset-button" id="zoomReset" type="button">Сброс</button>
+              </div>
+            </div>
           </div>
+
           <div class="score-track" aria-hidden="true">
             <span id="cityBar"></span>
             <span id="dachaBar"></span>
           </div>
-          <div class="score-item align-right">
-            <span class="score-name">Дача</span>
-            <strong id="dachaCount">0</strong>
-          </div>
           <p class="leader" id="leaderText">Считаем участников</p>
+
+          <div class="photo-board" id="photoBoard" aria-live="polite">
+            <div class="board-zones" aria-hidden="true">
+              <span class="zone-label zone-city">Город</span>
+              <span class="zone-label zone-dacha">Дача</span>
+              <span class="zone-line"></span>
+            </div>
+            <div class="board-canvas" id="boardCanvas"></div>
+          </div>
+        </section>
+      </section>
+
+      <section class="ticker" aria-label="Летняя промо-полоса">
+        <div class="ticker-track">
+          <span>город</span>
+          <span>дача</span>
+          <span>лето</span>
+          <span>MAX</span>
+          <span>Петрович</span>
+          <span>Горбилет</span>
+          <span>город</span>
+          <span>дача</span>
+          <span>лето</span>
+          <span>MAX</span>
+          <span>Петрович</span>
+          <span>Горбилет</span>
         </div>
       </section>
 
-      <section class="section feed-section" id="feed" aria-labelledby="feed-title">
-        <div class="section-head">
-          <p class="eyebrow dark">Лента лета</p>
-          <h2 id="feed-title">Как участники проводят июль</h2>
-          <div class="filter-tabs" role="group" aria-label="Фильтр ленты">
-            <button class="filter-tab active" type="button" data-filter="all">
-              Все
-            </button>
-            <button class="filter-tab" type="button" data-filter="city">
+      <section class="section join-section" id="join" aria-labelledby="join-title">
+        <div class="section-copy">
+          <p class="eyebrow">Заявка</p>
+          <h2 id="join-title">Отправьте свое лето</h2>
+          <p>
+            В&nbsp;демо фото появляется на&nbsp;доске только у&nbsp;вас
+            в&nbsp;браузере. Для запуска нужен закрытый бэкенд с&nbsp;модерацией
+            и&nbsp;хранением контактов.
+          </p>
+        </div>
+
+        <form class="entry-panel" aria-label="Заявка на участие">
+          <div class="side-switch" role="group" aria-label="Выберите сторону">
+            <button class="side-option active" type="button" data-side="city">
               Город
             </button>
-            <button class="filter-tab" type="button" data-filter="dacha">
+            <button class="side-option" type="button" data-side="dacha">
               Дача
             </button>
           </div>
-        </div>
-        <div class="photo-grid" id="photoGrid" aria-live="polite"></div>
+
+          <label class="upload-box" for="photoInput">
+            <input id="photoInput" name="photo" type="file" accept="image/*" />
+            <span class="upload-icon" aria-hidden="true">+</span>
+            <span class="upload-title">Загрузить фото</span>
+            <span class="upload-note">JPG или PNG, одно изображение</span>
+          </label>
+
+          <div class="preview-wrap" id="previewWrap" hidden>
+            <img id="photoPreview" alt="Предпросмотр выбранного фото" />
+            <button class="text-button" id="removePhoto" type="button">
+              Заменить фото
+            </button>
+          </div>
+
+          <div class="form-grid">
+            <label>
+              <span>Имя</span>
+              <input id="nameInput" name="name" type="text" autocomplete="name" />
+            </label>
+            <label>
+              <span>Контакт</span>
+              <input
+                id="contactInput"
+                name="contact"
+                type="text"
+                autocomplete="email"
+                placeholder="@username или email"
+              />
+            </label>
+          </div>
+
+          <div class="max-block" aria-labelledby="max-title">
+            <h3 id="max-title">MAX-боты</h3>
+            <div class="max-links">
+              <a href="https://max.ru/id010511198702_bot" target="_blank" rel="noreferrer">
+                Бот&nbsp;Петровича
+              </a>
+              <a href="https://max.ru/id772377734108_bot" target="_blank" rel="noreferrer">
+                Бот&nbsp;Горбилета
+              </a>
+            </div>
+            <label class="checkbox-row">
+              <input id="maxPetrovich" type="checkbox" />
+              <span>Нажал(а) «Участвую» в&nbsp;боте Петровича</span>
+            </label>
+            <label class="checkbox-row">
+              <input id="maxGorbilet" type="checkbox" />
+              <span>Нажал(а) «Участвую» в&nbsp;боте Горбилета</span>
+            </label>
+          </div>
+
+          <label class="checkbox-row consent">
+            <input id="consentInput" type="checkbox" />
+            <span>Разрешаю использовать фото в&nbsp;ленте конкурса</span>
+          </label>
+
+          <button class="submit-button" type="submit">Отправить заявку</button>
+          <p class="form-message" id="formMessage" role="status" aria-live="polite"></p>
+        </form>
       </section>
 
       <section class="section rules-section" aria-labelledby="rules-title">
-        <div class="section-head compact">
-          <p class="eyebrow dark">Механика</p>
+        <div class="section-copy">
+          <p class="eyebrow">Механика</p>
           <h2 id="rules-title">Три шага до участия</h2>
         </div>
         <div class="steps">
           <article>
-            <span>1</span>
-            <h3>Выберите сторону</h3>
-            <p>Городское лето с афишами и террасами или дачное с грядками и верандой.</p>
+            <span>01</span>
+            <h3>Выбрать сторону</h3>
+            <p>Городское лето или&nbsp;дачное лето. Оба варианта равноправны.</p>
           </article>
           <article>
-            <span>2</span>
-            <h3>Загрузите фото</h3>
-            <p>Одно живое фото, на котором понятно, где проходит ваше лето.</p>
+            <span>02</span>
+            <h3>Загрузить фото</h3>
+            <p>Один живой кадр, который проходит модерацию перед&nbsp;публикацией.</p>
           </article>
           <article>
-            <span>3</span>
-            <h3>Нажмите «Участвую» в MAX</h3>
-            <p>Два бота конкурса: Петрович и Горбилет. В демо подтверждение отмечается вручную.</p>
+            <span>03</span>
+            <h3>Нажать «Участвую»</h3>
+            <p>В&nbsp;двух MAX-ботах: Петрович и&nbsp;Горбилет.</p>
           </article>
         </div>
       </section>
 
       <section class="section prizes-section" id="prizes" aria-labelledby="prizes-title">
-        <div class="section-head">
-          <p class="eyebrow dark">Призы</p>
-          <h2 id="prizes-title">У каждой команды свой летний куш</h2>
+        <div class="section-copy">
+          <p class="eyebrow">Призы</p>
+          <h2 id="prizes-title">Коротко о выигрыше</h2>
         </div>
         <div class="prize-layout">
-          <article class="prize-card city-card">
+          <article class="prize-card">
             <p class="prize-count">10 победителей</p>
-            <h3>Городские</h3>
-            <p>Сертификаты от Горбилета для концертов, выставок, театров и прогулок.</p>
+            <h3>Город</h3>
+            <p>Сертификаты от&nbsp;Горбилета для концертов, выставок и&nbsp;театров.</p>
           </article>
-          <article class="prize-card bonus-card">
+          <article class="prize-card">
+            <p class="prize-count">10 победителей</p>
+            <h3>Дача</h3>
+            <p>Сертификаты от&nbsp;Петровича для ремонта, сада и&nbsp;летней кухни.</p>
+          </article>
+          <article class="prize-card accent-card">
             <p class="prize-count">+1 бонус</p>
-            <h3>Команда-лидер</h3>
+            <h3>Лидер</h3>
             <p id="bonusPrize">
-              Если впереди дачники, разыгрываем дачный приз. Если городские,
-              добавляем культурный.
+              Дополнительный приз получает команда, которая&nbsp;соберет больше
+              участников.
             </p>
-          </article>
-          <article class="prize-card dacha-card">
-            <p class="prize-count">10 победителей</p>
-            <h3>Дачники</h3>
-            <p>Сертификаты от Петровича для ремонта, сада, теплицы и летней кухни.</p>
           </article>
         </div>
       </section>
 
       <section class="promo-section" aria-labelledby="promo-title">
-        <div>
-          <p class="eyebrow dark">Финальный подарок</p>
-          <h2 id="promo-title">КУЛЬТУРНЫЙ ДАЧНИК</h2>
-          <p>
-            После конкурса все участники получают промокод, который работает у
-            Петровича и в Горбилете.
-          </p>
-        </div>
-        <a class="promo-cta" href="#join">Выбрать сторону</a>
+        <p class="eyebrow">Промокод всем участникам</p>
+        <h2 id="promo-title">КУЛЬТУРНЫЙ ДАЧНИК</h2>
+        <a class="primary-link" href="#join">Участвовать</a>
       </section>
     </main>
 
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Закрыть">
+        ×
+      </button>
+      <figure class="lightbox-card">
+        <img id="lightboxImage" alt="" />
+        <figcaption>
+          <span id="lightboxSide"></span>
+          <strong id="lightboxName"></strong>
+        </figcaption>
+      </figure>
+    </div>
+
     <footer class="site-footer">
-      <span>Петрович × Горбилет</span>
-      <span>Конкурс на месяц: старт, сбор фото, модерация, финальный розыгрыш.</span>
+      <a class="brand-lockup footer-brand" href="#top" aria-label="Петрович и Горбилет">
+        <span>Петрович</span>
+        <span class="brand-cross">×</span>
+        <span>Горбилет</span>
+      </a>
+      <span>Демо-концепт лендинга конкурса.</span>
     </footer>
 
     <script src="script.js"></script>
