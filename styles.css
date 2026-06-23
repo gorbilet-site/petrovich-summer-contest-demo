@@ -189,13 +189,7 @@ figure {
   position: absolute;
   inset: -18% -8%;
   z-index: -1;
-  background:
-    repeating-radial-gradient(
-      ellipse at center,
-      transparent 0 46px,
-      rgba(24, 22, 21, 0.18) 47px 49px,
-      transparent 50px 88px
-    );
+  background: transparent;
   opacity: 0.58;
   transform: rotate(-6deg);
   animation: posterBreath 9s ease-in-out infinite;
@@ -1339,5 +1333,689 @@ h1 span {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+/* MindMarket-inspired animated direction */
+:root {
+  --mind-lime: #8bd761;
+  --mind-coral: #ff665c;
+  --mind-blue: #289bf0;
+  --mind-yellow: #ffe500;
+  --mind-lilac: #dfb2ff;
+}
+
+body {
+  background: var(--paper);
+}
+
+.site-header {
+  top: 26px;
+  width: min(1780px, calc(100% - 112px));
+  min-height: 96px;
+  padding: 18px 22px;
+  background: rgba(255, 253, 248, 0.96);
+  border: 0;
+  border-radius: 18px;
+  color: var(--ink);
+  box-shadow: 0 22px 60px rgba(24, 22, 21, 0.12);
+  backdrop-filter: blur(18px);
+}
+
+.brand-lockup {
+  gap: 14px;
+  color: var(--ink);
+}
+
+.brand-chip {
+  height: 52px;
+}
+
+.brand-chip-petrovich {
+  max-width: 240px;
+}
+
+.brand-chip-gorbilet {
+  max-width: 260px;
+  padding: 0 16px;
+  background: var(--brand-red);
+  border-radius: 999px;
+}
+
+.brand-logo-petrovich {
+  height: 35px;
+  filter: none;
+}
+
+.brand-logo-gorbilet {
+  height: 31px;
+}
+
+.brand-cross {
+  width: 42px;
+  height: 42px;
+  background: var(--brand-red);
+  border: 0;
+  color: var(--white);
+  font-size: 22px;
+}
+
+.main-nav {
+  gap: 18px;
+}
+
+.main-nav a {
+  min-height: 54px;
+  padding: 0 12px;
+  color: var(--ink);
+  font-size: 21px;
+}
+
+.main-nav a:hover {
+  background: var(--brand-red-soft);
+}
+
+.hero {
+  width: 100%;
+  padding: 0 0 58px;
+}
+
+.poster-frame {
+  width: min(1900px, calc(100% - 44px));
+  min-height: min(960px, calc(100svh - 34px));
+  margin: -122px auto 0;
+  align-content: center;
+  padding: 216px 52px 82px;
+  background: var(--paper);
+  border-radius: 0 0 22px 22px;
+  color: var(--ink);
+}
+
+.poster-frame::before,
+.poster-frame::after {
+  display: none;
+}
+
+.poster-card {
+  z-index: 3;
+}
+
+.hero-copy {
+  width: min(940px, 100%);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.poster-frame .eyebrow {
+  color: var(--brand-red);
+  font-size: 18px;
+}
+
+h1 {
+  font-size: 122px;
+  line-height: 0.86;
+}
+
+.hero-lead {
+  color: var(--ink);
+  font-size: 24px;
+}
+
+.poster-tags span {
+  background: var(--white);
+  border: 0;
+  box-shadow: 0 10px 26px rgba(24, 22, 21, 0.1);
+}
+
+.hero-scene {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.scene-blob,
+.illustration-person,
+.hero-photo-card,
+.paper,
+.scribble {
+  position: absolute;
+}
+
+.scene-blob {
+  border-radius: 48% 52% 44% 56%;
+  opacity: 0.96;
+  animation: mindBlob 11s ease-in-out infinite;
+}
+
+.scene-blob-city {
+  top: -90px;
+  left: 4%;
+  width: min(46vw, 620px);
+  height: 780px;
+  background: var(--mind-lime);
+  transform: rotate(-13deg);
+}
+
+.scene-blob-dacha {
+  right: 8%;
+  bottom: -180px;
+  width: min(42vw, 620px);
+  height: 470px;
+  background: var(--mind-yellow);
+  animation-delay: -4s;
+}
+
+.illustration-person {
+  width: 260px;
+  height: 360px;
+  z-index: 2;
+  animation: mindFloat 6s ease-in-out infinite;
+}
+
+.person-city {
+  top: 180px;
+  left: 8%;
+  transform: rotate(-9deg);
+}
+
+.person-dacha {
+  right: 11%;
+  bottom: 68px;
+  transform: rotate(5deg);
+  animation-delay: -2.2s;
+}
+
+.illustration-person span {
+  position: absolute;
+  display: block;
+}
+
+.person-head {
+  top: 24px;
+  left: 106px;
+  width: 72px;
+  height: 76px;
+  background: #ffbd9e;
+  border-radius: 48% 52% 44% 56%;
+}
+
+.person-hair {
+  top: 14px;
+  left: 84px;
+  width: 88px;
+  height: 72px;
+  background: var(--mind-coral);
+  border-radius: 48% 52% 60% 40%;
+}
+
+.person-body {
+  top: 92px;
+  left: 62px;
+  width: 126px;
+  height: 138px;
+  background: var(--mind-blue);
+  border-radius: 38% 62% 48% 52%;
+  transform: rotate(-13deg);
+}
+
+.person-arm {
+  width: 152px;
+  height: 44px;
+  background: #fffaf1;
+  border-radius: 999px;
+}
+
+.person-arm-left {
+  top: 102px;
+  left: -20px;
+  transform: rotate(-38deg);
+}
+
+.person-arm-right {
+  top: 86px;
+  right: -54px;
+  transform: rotate(16deg);
+}
+
+.person-leg {
+  width: 58px;
+  height: 162px;
+  background: var(--mind-lilac);
+  border-radius: 999px;
+}
+
+.person-leg-left {
+  top: 205px;
+  left: 84px;
+  transform: rotate(34deg);
+}
+
+.person-leg-right {
+  top: 196px;
+  left: 150px;
+  transform: rotate(-18deg);
+}
+
+.person-shoe {
+  width: 70px;
+  height: 38px;
+  background: var(--mind-yellow);
+  border: 8px solid var(--mind-coral);
+  border-radius: 999px;
+}
+
+.person-shoe-left {
+  left: 36px;
+  bottom: -6px;
+  transform: rotate(-18deg);
+}
+
+.person-shoe-right {
+  right: 8px;
+  bottom: 4px;
+  transform: rotate(26deg);
+}
+
+.person-dacha .person-head {
+  background: var(--mind-blue);
+}
+
+.person-dacha .person-hair {
+  background: var(--mind-lilac);
+  border-top: 18px solid var(--mind-yellow);
+}
+
+.person-dacha .person-body {
+  background: var(--mind-lime);
+}
+
+.person-dacha .person-arm {
+  background: var(--mind-blue);
+}
+
+.person-dacha .person-leg {
+  background: var(--mind-yellow);
+}
+
+.person-dacha .person-shoe {
+  background: #fffaf1;
+  border-color: var(--mind-blue);
+}
+
+.hero-photo-card {
+  z-index: 2;
+  width: 190px;
+  margin: 0;
+  overflow: hidden;
+  background: var(--white);
+  border: 0;
+  border-radius: 22px;
+  box-shadow: 0 24px 60px rgba(24, 22, 21, 0.16);
+  animation: mindPhoto 7s ease-in-out infinite;
+}
+
+.hero-photo-card img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.hero-photo-card-city {
+  left: 18%;
+  bottom: 96px;
+  transform: rotate(-7deg);
+}
+
+.hero-photo-card-dacha {
+  right: 5%;
+  top: 330px;
+  transform: rotate(7deg);
+  animation-delay: -3s;
+}
+
+.paper {
+  z-index: 1;
+  width: 90px;
+  height: 70px;
+  background: var(--white);
+  border-radius: 8px 8px 60% 12px;
+  box-shadow: inset -18px -14px 0 var(--mind-blue);
+  animation: mindPaper 8s ease-in-out infinite;
+}
+
+.paper-one {
+  top: 290px;
+  left: 44%;
+}
+
+.paper-two {
+  right: 24%;
+  bottom: 180px;
+  transform: rotate(-24deg);
+  animation-delay: -2.6s;
+}
+
+.scribble {
+  z-index: 1;
+  width: 56px;
+  height: 92px;
+  border-left: 18px solid var(--mind-yellow);
+  border-radius: 50%;
+  transform: rotate(-16deg);
+  animation: mindWiggle 5s ease-in-out infinite;
+}
+
+.scribble-one {
+  top: 250px;
+  left: 38%;
+}
+
+.scribble-two {
+  right: 31%;
+  bottom: 96px;
+  animation-delay: -1.7s;
+}
+
+.hero-action-card {
+  position: absolute;
+  top: 200px;
+  right: 7%;
+  z-index: 4;
+  width: min(410px, 30vw);
+  padding: 28px;
+  background: var(--white);
+  border-radius: 0 0 24px 24px;
+  box-shadow: 0 24px 70px rgba(24, 22, 21, 0.13);
+  animation: mindFloat 7s ease-in-out infinite reverse;
+}
+
+.hero-action-card p {
+  margin-bottom: 22px;
+  color: var(--ink);
+  font-size: 22px;
+  font-weight: 820;
+  line-height: 1.18;
+}
+
+.hero-action-card .poster-actions {
+  justify-content: flex-start;
+  margin-top: 0;
+}
+
+.primary-link {
+  background: var(--mind-coral);
+  border-color: var(--mind-coral);
+  color: var(--ink);
+}
+
+.primary-link:hover,
+.submit-button:hover,
+.max-links a:hover {
+  background: var(--brand-red);
+  border-color: var(--brand-red);
+  color: var(--white);
+}
+
+.secondary-link {
+  border-color: transparent;
+  box-shadow: inset 0 0 0 2px rgba(24, 22, 21, 0.13);
+}
+
+.poster-year {
+  z-index: 5;
+  right: 7%;
+  color: var(--muted);
+}
+
+.ticker {
+  background: var(--mind-lime);
+  color: var(--ink);
+}
+
+.board-panel,
+.entry-panel,
+.steps article,
+.prize-card {
+  border: 0;
+  border-radius: 24px;
+  box-shadow: 0 22px 64px rgba(24, 22, 21, 0.11);
+}
+
+.accent-card {
+  background: var(--brand-red);
+}
+
+.promo-section {
+  background: var(--mind-yellow);
+  color: var(--ink);
+}
+
+.promo-section .eyebrow {
+  color: var(--brand-red);
+}
+
+@keyframes mindFloat {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 -18px;
+  }
+}
+
+@keyframes mindBlob {
+  0%,
+  100% {
+    border-radius: 48% 52% 44% 56%;
+  }
+
+  50% {
+    border-radius: 60% 40% 52% 48%;
+  }
+}
+
+@keyframes mindPhoto {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 14px;
+  }
+}
+
+@keyframes mindPaper {
+  0%,
+  100% {
+    translate: 0 0;
+    rotate: 0deg;
+  }
+
+  50% {
+    translate: 18px -14px;
+    rotate: 8deg;
+  }
+}
+
+@keyframes mindWiggle {
+  0%,
+  100% {
+    transform: rotate(-16deg) scaleY(1);
+  }
+
+  50% {
+    transform: rotate(8deg) scaleY(1.08);
+  }
+}
+
+@media (max-width: 1280px) {
+  .site-header {
+    width: min(100% - 44px, 1240px);
+  }
+
+  h1 {
+    font-size: 92px;
+  }
+
+  .main-nav a {
+    font-size: 17px;
+  }
+
+  .hero-action-card {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: min(620px, 100%);
+    margin-top: 30px;
+    border-radius: 24px;
+  }
+
+  .hero-action-card .poster-actions {
+    justify-content: center;
+  }
+
+  .hero-photo-card-dacha {
+    top: auto;
+    right: 5%;
+    bottom: 100px;
+  }
+}
+
+@media (max-width: 900px) {
+  .site-header {
+    top: 10px;
+    width: min(100% - 20px, 1240px);
+    min-height: 70px;
+    padding: 12px;
+  }
+
+  .brand-chip {
+    height: 38px;
+  }
+
+  .brand-logo-petrovich {
+    height: 23px;
+  }
+
+  .brand-logo-gorbilet {
+    height: 21px;
+  }
+
+  .brand-chip-gorbilet {
+    padding: 0 10px;
+  }
+
+  .brand-cross {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
+
+  .poster-frame {
+    width: min(100% - 16px, 1240px);
+    min-height: 760px;
+    margin-top: -92px;
+    padding: 148px 18px 42px;
+    border-radius: 0 0 18px 18px;
+  }
+
+  .scene-blob-city {
+    left: -32%;
+    width: 620px;
+    height: 640px;
+  }
+
+  .scene-blob-dacha {
+    right: -45%;
+    width: 560px;
+    height: 360px;
+  }
+
+  .person-city {
+    top: 132px;
+    left: -32px;
+    scale: 0.62;
+  }
+
+  .person-dacha {
+    right: -48px;
+    bottom: 42px;
+    scale: 0.64;
+  }
+
+  .hero-photo-card {
+    width: 128px;
+  }
+
+  .hero-photo-card-city {
+    left: 16px;
+    bottom: 88px;
+  }
+
+  .hero-photo-card-dacha {
+    right: 16px;
+    bottom: 88px;
+  }
+
+  .paper,
+  .scribble {
+    display: none;
+  }
+
+  h1 {
+    font-size: 52px;
+  }
+
+  .hero-lead {
+    font-size: 17px;
+  }
+
+  .hero-action-card {
+    padding: 22px;
+  }
+
+  .hero-action-card p {
+    font-size: 18px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .brand-logo-petrovich {
+    height: 18px;
+  }
+
+  .brand-logo-gorbilet {
+    height: 17px;
+  }
+
+  .brand-lockup {
+    gap: 7px;
+  }
+
+  .brand-chip-gorbilet {
+    padding: 0 8px;
+  }
+
+  .poster-frame {
+    min-height: 720px;
+  }
+
+  h1 {
+    font-size: 42px;
+  }
+
+  .poster-frame .eyebrow {
+    font-size: 13px;
+  }
+
+  .poster-tags {
+    max-width: 320px;
+    margin: 0 auto;
   }
 }
