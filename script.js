@@ -115,6 +115,9 @@ const state = {
 
 const cityCount = document.querySelector("#cityCount");
 const dachaCount = document.querySelector("#dachaCount");
+const cityTotal = document.querySelector("#cityTotal");
+const dachaTotal = document.querySelector("#dachaTotal");
+const leaderBadge = document.querySelector("#leaderBadge");
 const cityBar = document.querySelector("#cityBar");
 const dachaBar = document.querySelector("#dachaBar");
 const leaderText = document.querySelector("#leaderText");
@@ -377,10 +380,16 @@ function renderCounts() {
 
   cityCount.textContent = formatNumber(counts.city);
   dachaCount.textContent = formatNumber(counts.dacha);
+  cityTotal.textContent = formatNumber(counts.city);
+  dachaTotal.textContent = formatNumber(counts.dacha);
   cityBar.parentElement.style.setProperty("--city-share", `${cityShare}%`);
   dachaBar.parentElement.style.setProperty("--dacha-share", `${dachaShare}%`);
   leaderText.textContent =
     leader === "tie" ? "Команды идут ровно" : `Сейчас выигрывает: ${sideLabels[leader]}`;
+  leaderBadge.textContent =
+    leader === "tie"
+      ? "Команды идут ровно"
+      : `Сейчас лидирует ${sideLabels[leader]} · ${Math.abs(counts.city - counts.dacha)} впереди`;
   bonusPrize.textContent = bonusCopy[leader];
 }
 

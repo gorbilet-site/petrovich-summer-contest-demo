@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Где лето лучше: в городе или на даче?</title>
-    <link rel="stylesheet" href="styles.css?v=20260624-studio" />
+    <link rel="stylesheet" href="styles.css?v=20260624-structure" />
   </head>
   <body>
     <header class="site-header">
@@ -58,12 +58,6 @@
                 Загрузите одно фото, выберите сторону и&nbsp;попадите
                 на&nbsp;общую доску летнего соперничества.
               </p>
-              <div class="poster-tags" aria-label="Условия конкурса">
-                <span>.одно фото</span>
-                <span>.два MAX-бота</span>
-                <span>.20 победителей</span>
-                <span>.промокод всем</span>
-              </div>
             </div>
 
             <div class="hero-studio" aria-label="Лето в городе и на даче">
@@ -85,7 +79,7 @@
           </div>
 
           <div class="hero-action-card">
-            <p>Фото на&nbsp;доску, кнопка в&nbsp;двух MAX-ботах и&nbsp;маленькое летнее соперничество.</p>
+            <p>Фото на&nbsp;доску и&nbsp;кнопка в&nbsp;MAX-ботах.</p>
             <div class="poster-actions">
               <a class="primary-link" href="#join">Участвовать</a>
               <a class="secondary-link" href="#board">Доска</a>
@@ -95,16 +89,37 @@
         </div>
       </section>
 
+      <section class="section stats-section" id="score" aria-labelledby="score-title">
+        <div class="section-copy stats-copy">
+          <p class="eyebrow">Команды</p>
+          <h2 id="score-title">Выберите команду, где проходит ваше лето</h2>
+          <p>
+            Голос засчитывается через фото: городские кадры собирают культурную
+            команду, дачные — команду Петровича.
+          </p>
+        </div>
+        <div class="team-stats" aria-label="Счет команд">
+          <article class="team-card team-card-city">
+            <span>за команду</span>
+            <h3>Город</h3>
+            <strong id="cityTotal">0</strong>
+          </article>
+          <article class="team-card team-card-dacha">
+            <span>за команду</span>
+            <h3>Дача</h3>
+            <strong id="dachaTotal">0</strong>
+          </article>
+          <p class="team-leader" id="leaderBadge">Считаем участников</p>
+        </div>
+      </section>
+
       <section class="board-section" id="board" aria-labelledby="board-title">
         <div class="section-copy board-copy">
           <p class="eyebrow">Доска участников</p>
-          <h2 id="board-title">
-            <span>Город</span>
-            <span>против дачи</span>
-          </h2>
+          <h2 id="board-title">Смотрите, как проводят лето другие</h2>
           <p>
-            Фотографии крепятся на&nbsp;общую доску. Можно двигать поле,
-            увеличивать масштаб и&nbsp;смотреть карточки ближе.
+            Фото публикуются на&nbsp;общей доске: слева — команда «Город»,
+            справа — «Дача». Можно двигать поле и&nbsp;приближать карточки.
           </p>
         </div>
 
@@ -175,8 +190,8 @@
 
       <section class="section join-section" id="join" aria-labelledby="join-title">
         <div class="section-copy">
-          <p class="eyebrow">Заявка</p>
-          <h2 id="join-title">Отправьте свое лето</h2>
+          <p class="eyebrow">Загрузка</p>
+          <h2 id="join-title">Загрузите летнее фото</h2>
           <p>
             В&nbsp;демо фото появляется на&nbsp;доске только у&nbsp;вас
             в&nbsp;браузере. Для запуска нужен закрытый бэкенд с&nbsp;модерацией
@@ -258,7 +273,7 @@
       <section class="section rules-section" aria-labelledby="rules-title">
         <div class="section-copy">
           <p class="eyebrow">Механика</p>
-          <h2 id="rules-title">Три шага до участия</h2>
+          <h2 id="rules-title">Как принять участие</h2>
         </div>
         <div class="steps">
           <article>
@@ -282,7 +297,7 @@
       <section class="section prizes-section" id="prizes" aria-labelledby="prizes-title">
         <div class="section-copy">
           <p class="eyebrow">Призы</p>
-          <h2 id="prizes-title">Коротко о выигрыше</h2>
+          <h2 id="prizes-title">Выигрывайте летние подарки</h2>
         </div>
         <div class="prize-layout">
           <article class="prize-card">
@@ -347,6 +362,6 @@
       <span>Демо-концепт лендинга конкурса.</span>
     </footer>
 
-    <script src="script.js?v=20260624-studio"></script>
+    <script src="script.js?v=20260624-structure"></script>
   </body>
 </html>

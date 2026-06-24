@@ -2544,6 +2544,8 @@ h1 {
   }
 
   .hero-action-card {
+    width: 100%;
+    max-width: calc(100vw - 32px);
     display: grid;
     padding: 16px;
     text-align: center;
@@ -2551,6 +2553,7 @@ h1 {
 
   .hero-action-card p {
     max-width: none;
+    overflow-wrap: break-word;
   }
 
   .hero-action-card .poster-actions {
@@ -2573,5 +2576,158 @@ h1 {
 
   .studio-badge {
     left: 40%;
+  }
+}
+
+/* Structure from the updated concept */
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero {
+  order: 1;
+}
+
+.stats-section {
+  order: 2;
+}
+
+.join-section {
+  order: 3;
+}
+
+.board-section {
+  order: 4;
+}
+
+.ticker {
+  order: 5;
+}
+
+.prizes-section {
+  order: 6;
+}
+
+.rules-section {
+  order: 7;
+}
+
+.promo-section {
+  order: 8;
+}
+
+.stats-section {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: end;
+  gap: 28px;
+  padding-top: 44px;
+}
+
+.stats-copy h2 {
+  max-width: 780px;
+}
+
+.team-stats {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.team-card {
+  min-height: 250px;
+  display: grid;
+  align-content: space-between;
+  padding: 24px;
+  overflow: hidden;
+  border-radius: 28px;
+  box-shadow: 0 22px 64px rgba(24, 22, 21, 0.11);
+}
+
+.team-card span,
+.team-card h3,
+.team-card strong {
+  position: relative;
+  z-index: 1;
+}
+
+.team-card span {
+  color: rgba(24, 22, 21, 0.62);
+  font-size: 12px;
+  font-weight: 950;
+  text-transform: uppercase;
+}
+
+.team-card h3 {
+  margin: 10px 0 0;
+  font-size: 42px;
+  font-weight: 950;
+  line-height: 0.96;
+}
+
+.team-card strong {
+  font-size: 64px;
+  font-weight: 950;
+  line-height: 0.92;
+}
+
+.team-card-city {
+  background: var(--mind-blue);
+  color: var(--white);
+}
+
+.team-card-city span {
+  color: rgba(255, 253, 248, 0.75);
+}
+
+.team-card-dacha {
+  background: var(--mind-lime);
+  color: var(--ink);
+}
+
+.team-leader {
+  grid-column: 1 / -1;
+  min-height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 13px 18px;
+  background: var(--ink);
+  border-radius: 999px;
+  color: var(--white);
+  font-size: 15px;
+  font-weight: 900;
+  text-align: center;
+}
+
+@media (max-width: 960px) {
+  .stats-section {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+}
+
+@media (max-width: 620px) {
+  .stats-section {
+    padding-top: 30px;
+  }
+
+  .team-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .team-card {
+    min-height: 180px;
+  }
+
+  .team-card h3 {
+    font-size: 34px;
+  }
+
+  .team-card strong {
+    font-size: 48px;
   }
 }
