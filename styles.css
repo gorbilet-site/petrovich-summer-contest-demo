@@ -2019,3 +2019,559 @@ h1 {
     margin: 0 auto;
   }
 }
+
+/* Studio polish: cleaner hero without fragile hand-drawn people */
+.poster-frame {
+  min-height: 900px;
+  display: block;
+  padding: 190px 74px 76px;
+  overflow: hidden;
+}
+
+.hero-layout {
+  position: relative;
+  z-index: 4;
+  display: grid;
+  grid-template-columns: minmax(0, 0.88fr) minmax(440px, 0.82fr);
+  align-items: center;
+  gap: 70px;
+}
+
+.hero-copy {
+  width: 100%;
+  margin: 0;
+  text-align: left;
+}
+
+.poster-frame .eyebrow {
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  margin-bottom: 18px;
+  padding: 0 14px;
+  background: var(--white);
+  border-radius: 999px;
+  box-shadow: 0 12px 28px rgba(24, 22, 21, 0.08);
+  font-size: 13px;
+}
+
+h1 {
+  max-width: 760px;
+  margin: 0 0 26px;
+  font-size: 80px;
+  line-height: 0.91;
+}
+
+.hero-lead {
+  max-width: 640px;
+  margin: 0 0 26px;
+  color: var(--ink-soft);
+  font-size: 22px;
+  line-height: 1.32;
+}
+
+.poster-tags {
+  justify-content: flex-start;
+}
+
+.poster-tags span {
+  min-height: 42px;
+  padding: 9px 14px;
+  color: var(--ink);
+}
+
+.hero-scene {
+  opacity: 1;
+}
+
+.scene-panel {
+  position: absolute;
+  z-index: 1;
+  display: block;
+  border-radius: 38px;
+  opacity: 0.96;
+  transform-origin: center;
+  animation: studioPanel 13s ease-in-out infinite;
+}
+
+.scene-panel-city {
+  top: 110px;
+  left: -96px;
+  width: 520px;
+  height: 620px;
+  background: var(--mind-lime);
+  transform: rotate(-10deg);
+}
+
+.scene-panel-dacha {
+  right: -82px;
+  bottom: 66px;
+  width: 560px;
+  height: 410px;
+  background: var(--mind-yellow);
+  border-radius: 52px 180px 52px 52px;
+  animation-delay: -5s;
+}
+
+.scene-ribbon {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  width: 220px;
+  height: 32px;
+  background: var(--mind-coral);
+  border-radius: 999px;
+  box-shadow: 0 16px 34px rgba(255, 102, 92, 0.18);
+  animation: studioRibbon 8s ease-in-out infinite;
+}
+
+.scene-ribbon-top {
+  top: 220px;
+  right: 31%;
+  transform: rotate(-14deg);
+}
+
+.scene-ribbon-bottom {
+  left: 39%;
+  bottom: 128px;
+  width: 160px;
+  background: var(--mind-blue);
+  transform: rotate(18deg);
+  animation-delay: -3s;
+}
+
+.scene-squiggle {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  width: 86px;
+  height: 54px;
+  border-top: 8px solid var(--ink);
+  border-radius: 50%;
+  opacity: 0.42;
+  animation: studioSquiggle 7s ease-in-out infinite;
+}
+
+.scene-squiggle-one {
+  top: 340px;
+  left: 40%;
+  transform: rotate(22deg);
+}
+
+.scene-squiggle-two {
+  right: 18%;
+  bottom: 245px;
+  transform: rotate(-18deg);
+  animation-delay: -2.6s;
+}
+
+.hero-studio {
+  position: relative;
+  min-height: 590px;
+  z-index: 4;
+}
+
+.studio-photo {
+  position: absolute;
+  overflow: hidden;
+  margin: 0;
+  background: var(--white);
+  border: 10px solid var(--white);
+  border-radius: 34px;
+  box-shadow: 0 32px 84px rgba(24, 22, 21, 0.18);
+  transform-origin: center;
+  will-change: transform;
+}
+
+.studio-photo img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 24px;
+}
+
+.studio-photo figcaption {
+  position: absolute;
+  left: 18px;
+  bottom: 18px;
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 12px;
+  background: var(--white);
+  border-radius: 999px;
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 950;
+  text-transform: uppercase;
+}
+
+.studio-photo-city {
+  top: 72px;
+  left: 12px;
+  width: 250px;
+  transform: rotate(-7deg);
+  animation: studioCityPhoto 8.5s ease-in-out infinite;
+}
+
+.studio-photo-dacha {
+  top: 12px;
+  right: 0;
+  width: 305px;
+  transform: rotate(5deg);
+  animation: studioDachaPhoto 9.5s ease-in-out infinite;
+}
+
+.studio-score,
+.studio-badge,
+.studio-ticket {
+  position: absolute;
+  z-index: 5;
+  box-shadow: 0 22px 54px rgba(24, 22, 21, 0.14);
+  animation: studioFloat 7s ease-in-out infinite;
+}
+
+.studio-score {
+  left: 28px;
+  bottom: 92px;
+  display: grid;
+  gap: 5px;
+  width: 260px;
+  padding: 18px;
+  background: var(--ink);
+  border-radius: 24px;
+  color: var(--white);
+}
+
+.studio-score span {
+  color: rgba(255, 253, 248, 0.7);
+  font-size: 12px;
+  font-weight: 950;
+  text-transform: uppercase;
+}
+
+.studio-score strong {
+  font-size: 20px;
+  line-height: 1.08;
+}
+
+.studio-badge {
+  top: 300px;
+  left: 232px;
+  width: 96px;
+  height: 96px;
+  display: grid;
+  place-items: center;
+  background: var(--brand-red);
+  border-radius: 28px;
+  color: var(--white);
+  font-size: 24px;
+  font-weight: 950;
+  transform: rotate(-10deg);
+  animation-delay: -2s;
+}
+
+.studio-ticket {
+  right: 28px;
+  bottom: 68px;
+  padding: 24px 26px;
+  background: var(--mind-coral);
+  border-radius: 26px;
+  color: var(--ink);
+  font-size: 24px;
+  font-weight: 950;
+  line-height: 0.96;
+  transform: rotate(4deg);
+  animation-delay: -3.8s;
+}
+
+.hero-action-card {
+  position: relative;
+  top: auto;
+  right: auto;
+  z-index: 5;
+  width: min(620px, 100%);
+  margin: 44px 0 0;
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  background: rgba(255, 253, 248, 0.96);
+  border-radius: 28px;
+  animation: none;
+}
+
+.hero-action-card p {
+  max-width: 360px;
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.26;
+}
+
+.hero-action-card .poster-actions {
+  flex: 0 0 auto;
+  justify-content: flex-end;
+  margin: 0;
+}
+
+.primary-link {
+  min-height: 56px;
+  padding: 14px 22px;
+  border-radius: 18px;
+  background: var(--brand-red);
+  border-color: var(--brand-red);
+  color: var(--white);
+}
+
+.secondary-link {
+  min-height: 56px;
+  padding: 14px 18px;
+  border-radius: 18px;
+  background: var(--white);
+}
+
+.poster-year {
+  right: 74px;
+  bottom: 34px;
+}
+
+@keyframes studioCityPhoto {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(-7deg);
+  }
+
+  50% {
+    transform: translate3d(0, -16px, 0) rotate(-4deg);
+  }
+}
+
+@keyframes studioDachaPhoto {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(5deg);
+  }
+
+  50% {
+    transform: translate3d(0, 18px, 0) rotate(2deg);
+  }
+}
+
+@keyframes studioFloat {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 -12px;
+  }
+}
+
+@keyframes studioPanel {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 18px -12px;
+  }
+}
+
+@keyframes studioRibbon {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 24px 14px;
+  }
+}
+
+@keyframes studioSquiggle {
+  0%,
+  100% {
+    scale: 1;
+  }
+
+  50% {
+    scale: 1.12;
+  }
+}
+
+@media (max-width: 1180px) {
+  .poster-frame {
+    min-height: auto;
+    padding: 154px 28px 54px;
+  }
+
+  .hero-layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .hero-copy {
+    max-width: 780px;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  h1 {
+    max-width: 780px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 64px;
+  }
+
+  .hero-lead {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .poster-tags {
+    justify-content: center;
+  }
+
+  .hero-studio {
+    width: min(680px, 100%);
+    min-height: 540px;
+    margin: 0 auto;
+  }
+
+  .hero-action-card {
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 720px) {
+  .site-header {
+    min-height: 64px;
+    border-radius: 16px;
+  }
+
+  .poster-frame {
+    width: min(100% - 12px, 1240px);
+    margin-top: -86px;
+    padding: 132px 16px 42px;
+  }
+
+  h1 {
+    font-size: 42px;
+  }
+
+  .hero-copy {
+    padding: 0 8px;
+  }
+
+  .hero-lead {
+    font-size: 17px;
+    max-width: 300px;
+  }
+
+  .hero-studio {
+    width: 100%;
+    max-width: 360px;
+    min-height: 430px;
+  }
+
+  .studio-photo {
+    border-width: 7px;
+    border-radius: 24px;
+  }
+
+  .studio-photo img {
+    border-radius: 17px;
+  }
+
+  .studio-photo-city {
+    top: 58px;
+    left: 2px;
+    width: 44%;
+  }
+
+  .studio-photo-dacha {
+    top: 18px;
+    right: 6px;
+    width: 50%;
+  }
+
+  .studio-score {
+    left: 8px;
+    bottom: 54px;
+    width: 178px;
+    padding: 14px;
+  }
+
+  .studio-score strong {
+    font-size: 14px;
+  }
+
+  .studio-badge {
+    top: 240px;
+    left: 45%;
+    width: 76px;
+    height: 76px;
+    border-radius: 22px;
+    font-size: 18px;
+  }
+
+  .studio-ticket {
+    right: 30px;
+    bottom: 28px;
+    padding: 14px;
+    border-radius: 20px;
+    font-size: 14px;
+  }
+
+  .scene-panel-city {
+    left: -260px;
+    width: 520px;
+    height: 540px;
+  }
+
+  .scene-panel-dacha {
+    right: -280px;
+    width: 500px;
+  }
+
+  .scene-ribbon,
+  .scene-squiggle {
+    display: none;
+  }
+
+  .hero-action-card {
+    display: grid;
+    padding: 16px;
+    text-align: center;
+  }
+
+  .hero-action-card p {
+    max-width: none;
+  }
+
+  .hero-action-card .poster-actions {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 430px) {
+  h1 {
+    font-size: 36px;
+  }
+
+  .poster-frame .eyebrow {
+    font-size: 11px;
+  }
+
+  .studio-score {
+    width: 190px;
+  }
+
+  .studio-badge {
+    left: 40%;
+  }
+}
