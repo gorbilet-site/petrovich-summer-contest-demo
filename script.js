@@ -566,14 +566,14 @@ function applyNoHangingWords(root) {
     },
   });
   const glueWords =
-    "а|в|во|и|к|ко|на|не|но|о|об|от|по|с|со|у|до|за|из|или|же|бы|для";
+    "а|в|во|и|к|ко|на|не|но|о|об|от|по|с|со|у|до|за|из|или|же|бы|для|как|что|чтобы|если|когда";
   const gluePattern = new RegExp(`(^|[\\s([{«"„])(${glueWords})\\s+`, "giu");
+  const dashPattern = /(\s+[—–])\s+/g;
 
   while (walker.nextNode()) {
-    walker.currentNode.nodeValue = walker.currentNode.nodeValue.replace(
-      gluePattern,
-      "$1$2\u00a0",
-    );
+    walker.currentNode.nodeValue = walker.currentNode.nodeValue
+      .replace(gluePattern, "$1$2\u00a0")
+      .replace(dashPattern, "$1\u00a0");
   }
 }
 
